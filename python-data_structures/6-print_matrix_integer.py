@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     for row in matrix:
-        for numbers in row:
-            print("{:d}".format(numbers), end=" ")
+        for number in enumerate(row):
+            print("{:d}".format(number[1]), 
+                  end="" if number[0] == len(row) - 1 else " ")
         print()
-    print("--")
