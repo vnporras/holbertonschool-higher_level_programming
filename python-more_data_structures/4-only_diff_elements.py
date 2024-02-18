@@ -6,14 +6,14 @@ def only_diff_elements(set_1, set_2):
 
     for i in set_1:
         valueDictionary = resultDictionary.get(i)
-        if valueDictionary == None:
+        if valueDictionary is None:
             resultDictionary[i] = 1
         else:
             resultDictionary[i] = valueDictionary + 1
 
     for i in set_2:
         valueDictionary = resultDictionary.get(i)
-        if valueDictionary == None:
+        if valueDictionary is None:
             resultDictionary[i] = 1
         else:
             resultDictionary[i] = valueDictionary + 1
