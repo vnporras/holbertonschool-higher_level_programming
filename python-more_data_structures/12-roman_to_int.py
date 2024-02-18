@@ -22,7 +22,8 @@ def units(units_string):
             return 9
         case _:
             return 0
-        
+
+
 def tens(tens_string):
     match tens_string:
         case "X":
@@ -45,7 +46,8 @@ def tens(tens_string):
             return 90
         case _:
             return 0
-        
+
+
 def hundreds(hundreds_string):
     match hundreds_string:
         case "C":
@@ -68,7 +70,8 @@ def hundreds(hundreds_string):
             return 900
         case _:
             return 0
-        
+
+
 def thousands(thousands_string):
     match thousands_string:
         case "M":
@@ -81,26 +84,28 @@ def thousands(thousands_string):
             return 0
 
 
-def roman_to_int(roman_string): # XIX
-    if type(roman_number) != str or roman_number == None:
+def roman_to_int(roman_string):
+    if type(roman_number) != str or roman_number is None:
         return 0
-    
+
     thousandsString = ""
     hundredsString = ""
     tensString = ""
     unitsString = ""
 
-    for index, value in enumerate(roman_string):
-        if roman_string[index] == "M":
+    for index, value in enumerate(roman_str):
+        if roman_str[index] == "M":
             thousandsString += value
-        
-        if roman_string[index] == "C" or roman_string[index] == "D":
+
+        if roman_str[index] == "C" or roman_str[index] == "D":
             hundredsString += value
 
-        if (roman_string[index] == "X" and roman_string[index - 1] != "I") or roman_string[index] == "L":
+        if (roman_str[index] == "X"
+                and roman_str[index - 1] != "I") or roman_str[index] == "L":
             tensString += value
 
-        if roman_string[index] == "I" or roman_string[index] == "V" or (roman_string[index] == "X" and roman_string[index - 1] == "I"):
+        if roman_str[index] == "I" or roman_str[index] == "V" or \
+                (roman_str[index] == "X" and roman_str[index - 1] == "I"):
             unitsString += value
 
     romanInteger = 0
