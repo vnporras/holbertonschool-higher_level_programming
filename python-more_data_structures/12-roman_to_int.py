@@ -81,7 +81,7 @@ def thousands(thousands_string):
             return 0
 
 
-def roman_to_int(roman_str): # XIX
+def roman_to_int(roman_str):
     if type(roman_str) != str or roman_str == None:
         return 0
     
