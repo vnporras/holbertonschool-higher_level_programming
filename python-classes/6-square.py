@@ -42,7 +42,7 @@ class Square:
     def position(self, value):
         """Set the position of the square."""
 
-        if not type(value) is tuple:
+        if not type(value) is tuple or len(value) != 2:
             """Raise an error if position is not a tuple."""
             raise TypeError("position must be a tuple of 2 positive integers")
 
