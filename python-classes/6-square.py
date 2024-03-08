@@ -23,11 +23,11 @@ class Square:
     def size(self, value):
         """Set the size of the square."""
 
-        if not type(self.size) is int:
+        if not type(value) is int:
             """Raise an error if size is not an integer."""
             raise TypeError("size must be an integer")
 
-        if self.size < 0:
+        if value < 0:
             """Raise an error if size is less than 0."""
             raise ValueError("size must be >= 0")
 
@@ -42,7 +42,7 @@ class Square:
     def position(self, value):
         """Set the position of the square."""
 
-        if not type(self.position) is tuple:
+        if not type(value) is tuple:
             """Raise an error if position is not a tuple."""
             raise TypeError("position must be a tuple of 2 positive integers")
 
