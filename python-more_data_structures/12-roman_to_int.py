@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" def units(units_string):
+def units(units_string):
     match units_string:
         case "I":
             return 1
@@ -111,10 +111,9 @@ def roman_to_int(roman_str):
     romanInteger += tens(tensString)
     romanInteger += units(unitsString)
 
-    return romanInteger """
+    return romanInteger
 
-
-def roman_to_int(roman_str):
+""" def roman_to_int(roman_str):
     roman_to_decimal = {
         'I': 1,
         'V': 5,
@@ -146,3 +145,4 @@ def roman_to_int(roman_str):
     total += decimal_values[-1]
 
     return total
+ """
