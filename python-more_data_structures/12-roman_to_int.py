@@ -133,7 +133,7 @@ def roman_to_int(roman_str):
         if char in roman_to_decimal:
             decimal_values.append(roman_to_decimal[char])
         else:
-            return None
+            raise ValueError(f"Carácter no válido en número romano: {char}")
     
     total = 0
     for i in range(n - 1):
