@@ -22,7 +22,7 @@
             return 9
         case _:
             return 0
-        
+
 def tens(tens_string):
     match tens_string:
         case "X":
@@ -45,7 +45,7 @@ def tens(tens_string):
             return 90
         case _:
             return 0
-        
+
 def hundreds(hundreds_string):
     match hundreds_string:
         case "C":
@@ -68,7 +68,7 @@ def hundreds(hundreds_string):
             return 900
         case _:
             return 0
-        
+
 def thousands(thousands_string):
     match thousands_string:
         case "M":
@@ -84,7 +84,7 @@ def thousands(thousands_string):
 def roman_to_int(roman_str):
     if type(roman_str) != str or roman_str == None:
         return 0
-    
+
     thousandsString = ""
     hundredsString = ""
     tensString = ""
@@ -93,7 +93,7 @@ def roman_to_int(roman_str):
     for index, value in enumerate(roman_str):
         if roman_str[index] == "M":
             thousandsString += value
-        
+
         if roman_str[index] == "C" or roman_str[index] == "D":
             hundredsString += value
 
@@ -113,6 +113,7 @@ def roman_to_int(roman_str):
 
     return romanInteger """
 
+
 def roman_to_int(roman_str):
     roman_to_decimal = {
         'I': 1,
@@ -126,22 +127,22 @@ def roman_to_int(roman_str):
 
     roman_str = roman_str.upper()
     n = len(roman_str)
-    
+
     decimal_values = []
-    
+
     for char in roman_str:
         if char in roman_to_decimal:
             decimal_values.append(roman_to_decimal[char])
         else:
-            raise ValueError(f"Carácter no válido en número romano: {char}")
-    
+            raise ValueError(f"invalid: {char}")
+
     total = 0
     for i in range(n - 1):
         if decimal_values[i] < decimal_values[i + 1]:
             total -= decimal_values[i]
         else:
             total += decimal_values[i]
-    
+
     total += decimal_values[-1]
-    
+
     return total
