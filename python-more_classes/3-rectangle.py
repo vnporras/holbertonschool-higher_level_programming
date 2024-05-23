@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle"""
+"""Defines a class Rectangle
+"""
 
 
 class Rectangle:
-    """Represents a rectangle"""
-
+    """Represents a rectangle
+    """
     def __init__(self, width=0, height=0):
         """Initializes a rectangle"""
-        self.__height = height
-        self.__width = width
+        self.width = width
+        self.height = height
 
     @property
     def height(self):
@@ -20,10 +21,8 @@ class Rectangle:
         """setter for the instance attribute height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-
         if value < 0:
             raise ValueError("height must be >= 0")
-
         self.__height = value
 
     @property
@@ -36,11 +35,8 @@ class Rectangle:
         """setter for the instance attribute width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-
         if value < 0:
-
             raise ValueError("width must be >= 0")
-
         self.__width = value
 
     def area(self):
