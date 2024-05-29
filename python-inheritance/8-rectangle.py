@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
 """Defines a class BaseGeometry"""
+
+
 class BaseGeometry:
     """Represents a base geometry"""
 
@@ -15,6 +16,7 @@ class BaseGeometry:
 
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
     """Represents a rectangle"""
