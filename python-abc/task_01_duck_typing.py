@@ -2,7 +2,6 @@
 from abc import ABC, abstractmethod
 import math
 
-
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -16,7 +15,7 @@ class Shape(ABC):
 class Circle(Shape):
     def __init__(self, radius):
         if radius < 0:
-            raise ValueError("Radius cannot be negative")
+            raise ValueError
         self.radius = radius
 
     def area(self):
