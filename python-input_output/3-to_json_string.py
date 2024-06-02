@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
+"""module"""
 
-"""Class to JSON"""
+import json
 
 
 def to_json_string(my_obj):
