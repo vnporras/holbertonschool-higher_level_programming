@@ -14,4 +14,4 @@ class Student:
         """retrieves a dictionary representation of a Student instance"""
         if attrs is not None and type(attrs) is list:
             return {k: v for k, v in self.__dict__.items() if k in attrs}
-        return self.__dict__ 
+        return self.__dict__
