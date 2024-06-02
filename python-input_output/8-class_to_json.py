@@ -5,7 +5,7 @@
 
 def class_to_json(obj):
     """returns the dictionary description with simple data structure"""
-    if hasattr(obj, "__dict__"):
+    if not hasattr(obj, "__dict__"):
         """validate if obj has __dict__ attribute, if not raise ValueError"""
         raise ValueError
 
