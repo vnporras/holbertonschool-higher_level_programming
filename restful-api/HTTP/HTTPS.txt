@@ -1,49 +1,49 @@
-#Common HTTP Methods
+COMMON HTTP METHODS
 
-##GET
+- GET
 
 Description: Retrieves data from a server at the specified resource.
 Usage Scenario: When a user wants to fetch information from a webpage. For example, when you load a blog post in your browser.
 
-##POST
+- POST
 
 Description: Sends data to the server to create a new resource.
 Usage Scenario: When a user submits a form to create a new user account on a website.
 
-##PUT
+- PUT
 
 Description: Updates an existing resource or creates a new resource if it does not exist.
 Usage Scenario: When updating user profile information on a social media site.
 
-##DELETE
+- DELETE
 
 Description: Removes the specified resource from the server.
 Usage Scenario: When a user deletes a post from their blog.
 
 
-#Common HTTP Status Codes
+COMMON HTTP STATUS CODES
 
-## 200 OK
+- 200 OK
 
 Description: The request has succeeded.
 Scenario: When a user successfully loads a webpage or retrieves a resource.
 
-## 201 Created
+- 201 Created
 
 Description: The request has been fulfilled, resulting in the creation of a new resource.
 Scenario: When a new user account is successfully created after submitting a registration form.
 
-## 400 Bad Request
+- 400 Bad Request
 
 Description: The server could not understand the request due to invalid syntax.
 Scenario: When a user submits a form with missing required fields, and the server cannot process the request.
 
-## 401 Unauthorized
+- 401 Unauthorized
 
 Description: The client must authenticate itself to get the requested response.
 Scenario: When a user tries to access a protected page without logging in.
 
-## 404 Not Found
+- 404 Not Found
 
 Description: The server cannot find the requested resource.
 Scenario: When a user tries to access a non-existent page on a website, such as a broken link.
