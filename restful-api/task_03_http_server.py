@@ -28,7 +28,7 @@ class VnHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
-            self.wfile.write(b'Endpoint not found')
+            self.wfile.write(b'404 Not Found')
 
 httpd = HTTPServer(('', 8000), VnHandler)
 httpd.serve_forever()
