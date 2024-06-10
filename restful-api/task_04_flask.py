@@ -2,7 +2,10 @@
 from flask import Flask, jsonify, request
 
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {
+    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+}
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,7 +27,7 @@ def get_user(username):
     if user:
         return jsonify(user)
     else:
-        return jsonify({"User not found"})
+        return jsonify({"error": "User not found"}), 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
@@ -32,7 +35,7 @@ def add_user():
     username = data.get('username')
 
     if username in users:
-        return jsonify({"User already exists"}), 400
+        return jsonify({"error": "User already exists"}), 400
 
     users[username] = {
         "name": data.get("name"),
@@ -40,7 +43,7 @@ def add_user():
         "city": data.get("city")
     }
 
-    return jsonify({"user": "User added successfully", "user": users[username]}), 201
+    return jsonify({"message": "User added successfully", "user": users[username]}), 201
 
 
 if __name__ == "__main__":
