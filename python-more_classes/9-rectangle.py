@@ -3,8 +3,8 @@
 
 
 class Rectangle:
-    """Represents a rectangle"""
-
+    """Represents a rectangle
+    """
     number_of_instances = 0
     print_symbol = "#"
 
@@ -30,13 +30,6 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """Returns a new Rectangle instance with width == height == size"""
-        if size < 0:
-            raise ValueError("width must be >= 0")
-        return cls(size, size)
 
     @property
     def height(self):
@@ -88,7 +81,7 @@ class Rectangle:
         return print_rectangle.strip()
 
     def __repr__(self):
-        """Returns the formal string representation of the rectangle"""
+        """Returns the string representation of the rectangle"""
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
