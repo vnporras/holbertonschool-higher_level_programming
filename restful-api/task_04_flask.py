@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/python3
+#!/usr/bin/python3
 from flask import Flask, jsonify, request
 
 
@@ -23,35 +23,33 @@ def status():
 
 @app.route('/users/<username>')
 def get_user(username):
-    user = users.get(username)
-    if user:
-        return jsonify(user)
+    if username in users:
+        return jsonify(users[username])
     else:
-        return jsonify({"error": "User not found"}), 404
+        return jsonify({'error': 'User not found'}), 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    data = request.get_json()
+
+    data = request.json
     username = data.get('username')
+    name = data.get('name')
+    age = data.get('age')
+    city = data.get('city')
 
-    if not username:
-        return jsonify({"error": "Username is required"}), 400
+    if username in users:
+        return jsonify({'error': 'Username already exists. Choose a different username.'}), 400
 
-    elif username in users:
-        return jsonify({"error": "User already exists"}), 400
-
-    users[username] = {
-        "username": username,
-        "name": data.get("name"),
-        "age": data.get("age"),
-        "city": data.get("city")
+    new_user = {
+        'username': username,
+        'name': name,
+        'age': age,
+        'city': city
     }
 
-    return jsonify({
-        "message": "User added",
-        "user": users[username]
-    }), 201
+    users[username] = new_user
 
+    return jsonify({'message': 'User added', 'user': new_user}), 201
 
 if __name__ == "__main__":
     app.run()
