@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/python3
+#!/usr/bin/python3
 import requests, csv
 
 def fetch_and_print_posts():
@@ -28,3 +28,6 @@ def fetch_and_save_posts():
             for post in parsed_data:
                 writer.writerow({'id': post['id'], 'title': post['title'], 'body' : post['body']})
     
+
+fetch_and_print_posts()
+fetch_and_save_posts()

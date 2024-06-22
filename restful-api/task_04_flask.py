@@ -37,6 +37,9 @@ def add_user():
     age = data.get('age')
     city = data.get('city')
 
+    if username is None or username == '':
+        return jsonify({'error': 'Username Required'}), 400
+
     if username in users:
         return jsonify({'error': 'Username already exists. Choose a different username.'}), 400
 
