@@ -1,3 +1,4 @@
+-- Genre ID by show
 SELECT 
     g.name AS genre, 
     COUNT(tg.show_id) AS number_of_shows
