@@ -32,26 +32,11 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    data = request.json
+    new_user = request.json
+    username = new_user.get("username")
 
-    if not data or not data.get('username') or not data.get('name') or not data.get('age') or not data.get('city'):
-        return jsonify({'error': 'All fields (username, name, age, city) are required.'}), 400
-
-    username = data.get('username')
-
-    if username == '':
-        return jsonify({'error': 'Username cannot be empty.'}), 400
-
-    if username in users:
-        return jsonify({'error': 'Username already exists. Choose a different username.'}), 400
-
-    new_user = {
-        'username': username,
-        'name': data.get('name'),
-        'age': data.get('age'),
-        'city': data.get('city')
-    }
-
+    if not username:
+        return jsonify({'error': 'Username is required'}), 400
     users[username] = new_user
 
     return jsonify({'message': 'User added', 'user': new_user}), 201
