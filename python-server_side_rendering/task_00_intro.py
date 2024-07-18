@@ -3,21 +3,21 @@ def generate_invitations(template, attendees):
 
     # Verifica tipos de entrada
     if not isinstance(template, str):
-        print("Error: El template debe ser un string.")
+        print("Error: The template must be a string.")
         return
     
     if not isinstance(attendees, list) or not all(isinstance(att, dict) for att in attendees):
-        print("Error: Los asistentes deben ser una lista de diccionarios.")
+        print("Error: The assistants should be a list of dictionaries")
         return
 
     # Maneja plantilla vacía
     if not template.strip():
-        print("Error: La plantilla está vacía, no se generaron archivos de salida.")
+        print("Error: The template is empty, no output files were generated.")
         return
 
     # Maneja lista vacía de asistentes
     if not attendees:
-        print("Error: No se proporcionaron datos, no se generaron archivos de salida.")
+        print("Error: No data provided, no output files generated.")
         return
 
     # Procesar cada asistente y generar archivos de salida
