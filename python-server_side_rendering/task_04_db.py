@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_data_from_json():
     with open('products.json') as f:
         data = json.load(f)
-    return data['items']
+    return data
 
 def get_data_from_csv():
     items = []
